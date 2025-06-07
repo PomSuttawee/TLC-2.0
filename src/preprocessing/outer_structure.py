@@ -8,7 +8,7 @@ from typing import Tuple
 import numpy as np
 import cv2
 
-def process_tlc_image(image: np.ndarray, crop: bool = True, transform: bool = True) -> np.ndarray:
+def process_outer_structure(image: np.ndarray, crop: bool = True, transform: bool = True) -> np.ndarray:
     """
     Processes a TLC paper image by removing background and optionally cropping and applying perspective transform.
 
