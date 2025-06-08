@@ -7,7 +7,7 @@ _MIN_LINE_LEN_RATIO = 0.25          # 25 % of width
 _HEADER_FRAC = 0.15
 _FOOTER_FRAC = 0.15                 # prefer symmetric names
 
-def trim_ref_lines(
+def trim_reference_lines(
     image: np.ndarray,
     header_frac: float = _HEADER_FRAC,
     footer_frac: float = _FOOTER_FRAC,
@@ -26,12 +26,7 @@ def trim_ref_lines(
         raise ValueError("Unable to locate origin or front line.")
 
     footer_y = footer_rel + image.shape[0] - footer.shape[0]
-    trimmed_image = image[header_y:footer_y]
-    
-    # Segment
-    
-    
-    
+
     return image[header_y:footer_y]
 
 # ---------- helpers ---------- #
