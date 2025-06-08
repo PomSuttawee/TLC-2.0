@@ -7,15 +7,16 @@ _MIN_LINE_LEN_RATIO = 0.25          # 25 % of width
 _HEADER_FRAC = 0.15
 _FOOTER_FRAC = 0.15                 # prefer symmetric names
 
-def process_inner_structure(
+def trim_ref_lines(
     image: np.ndarray,
     header_frac: float = _HEADER_FRAC,
     footer_frac: float = _FOOTER_FRAC,
-    visualize: bool = True,
+    visualize: bool = False,
 ) -> np.ndarray:
     """
     Trim a TLC image to the region between the origin line and the solvent front.
     """
+    # Trim
     header = image[: int(image.shape[0] * header_frac)]
     footer = image[int(image.shape[0] * (1 - footer_frac)) :]
 
@@ -25,6 +26,12 @@ def process_inner_structure(
         raise ValueError("Unable to locate origin or front line.")
 
     footer_y = footer_rel + image.shape[0] - footer.shape[0]
+    trimmed_image = image[header_y:footer_y]
+    
+    # Segment
+    
+    
+    
     return image[header_y:footer_y]
 
 # ---------- helpers ---------- #

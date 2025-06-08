@@ -8,13 +8,13 @@ from typing import Tuple
 import numpy as np
 import cv2
 
-def process_outer_structure(image: np.ndarray, crop: bool = True, transform: bool = True) -> np.ndarray:
+def crop_plate(image: np.ndarray, crop: bool = True, transform: bool = True) -> np.ndarray:
     """
     Processes a TLC paper image by removing background and optionally cropping and applying perspective transform.
 
     Args:
         image (np.ndarray): Input BGR image of the TLC paper.
-        crop (bool, optional): Whether to crop the image to the region of interest. Defaults to False.
+        crop (bool, optional): Whether to crop the image to the region of interest. Defaults to True.
         transform (bool, optional): Whether to apply a perspective transform. Defaults to True.
 
     Returns:
