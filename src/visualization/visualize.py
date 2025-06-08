@@ -12,7 +12,7 @@ def show_image(image: np.ndarray, title: str = "Image", cmap: str = None) -> Non
         cmap (str): Colormap to use for displaying the image. Default is None.
     """
     image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB) if image.ndim == 3 else image
-    plt.figure(figsize=(10, 10))
+    plt.figure(figsize=(5, 5))
     plt.imshow(image_rgb, cmap=cmap)
     plt.title(title)
     plt.axis('off')
